@@ -17,6 +17,7 @@ body {
     background-color: red;
     bottom: 100px;
     border-radius: 50% 100% 30% 20%;
+    animation: 1s 1 linear go_car;
 }
 
 .car__window {
@@ -44,4 +45,89 @@ body {
 
 .car__wheel-right {
     right: 20px;
+}
+
+.container__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.container__buttons-color {
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+.container__buttons-color:hover {
+    color: orange;
+    border-color: orange;
+}
+
+.container__buttons-solid {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+}
+
+.button {
+    cursor: pointer;
+    transition: 200ms all linear;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.container__buttons-solid:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+    transform: scale(0.8);
+}
+
+.svg_rotate {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__buttons-rotate {
+    background-color: cadetblue;
+    border-radius: 12px;
+    padding: 6px;
+ }
+
+.container__buttons-rotate:hover {
+    transform: rotate(90deg) scale(1.2);
+}
+
+.container__instance {
+    width: 75px;
+    height: 75px;
+    background-color: red;
+    animation: 1s 3 linear rotation alternate;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg) scale(1);
+        border-radius: 0;
+    }
+    to {
+        transform: rotate(360deg) scale(2);
+        border-radius: 100%;
+    }
+}
+
+@keyframes go_car {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(650%);
+    }
 }
